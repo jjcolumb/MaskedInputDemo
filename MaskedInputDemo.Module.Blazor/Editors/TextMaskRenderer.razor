@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+<DevExpress.Blazor.DxMaskedInput  
+                                 Value=@ComponentModel.Value 
+                                 Mask="(999)000-0000" 
+                                 @onchange=@(e => ComponentModel.SetValueFromUI((string)e.Value))
+                                 ReadOnly=@ComponentModel.ReadOnly
+                                 @attributes=@ComponentModel.Attributes>
+    <DevExpress.Blazor.DxTextMaskProperties Placeholder="@('*')" SaveLiteral=false />
+</DevExpress.Blazor.DxMaskedInput>
+@code {
+
+    [Parameter]
+    public TextMaskModel ComponentModel { get; set; }   
+
+    public static RenderFragment Create(TextMaskModel componentModel) =>
+    @<TextMaskRenderer ComponentModel=@componentModel />;
+}

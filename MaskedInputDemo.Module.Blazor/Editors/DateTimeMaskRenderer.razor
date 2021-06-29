@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+<DevExpress.Blazor.DxMaskedInput Value=@ComponentModel.Value
+                                 Mask="d"
+                                 @onchange=@(e => ComponentModel.SetValueFromUI((string)e.Value))
+                                 ReadOnly=@ComponentModel.ReadOnly
+                                 @attributes=@ComponentModel.Attributes
+                                 MaskMode="DevExpress.Blazor.MaskMode.DateTime">
+    <DevExpress.Blazor.DxDateTimeMaskProperties CaretMode="DevExpress.Blazor.MaskCaretMode.Regular" />
+</DevExpress.Blazor.DxMaskedInput>
+@code {
+    [Parameter]
+    public TextMaskModel ComponentModel { get; set; }
+    public string PlaceHolder = "*";
+    public static RenderFragment Create(TextMaskModel componentModel) =>
+    @<DateTimeMaskRenderer ComponentModel=@componentModel />;
+}
+

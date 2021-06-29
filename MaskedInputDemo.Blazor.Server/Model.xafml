@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="MaskedInputDemo.Module.BusinessObjects.DomainObject1">
+      <OwnMembers>
+        <Member Name="Date" PropertyEditorType="MaskedInputDemo.Module.Blazor.Editors.CustomDateTimeMaskPropertyEditor" />
+        <Member Name="Email" PropertyEditorType="MaskedInputDemo.Module.Blazor.Editors.CustomEmailMaskPropertyEditor" />
+        <Member Name="Price" PropertyEditorType="MaskedInputDemo.Module.Blazor.Editors.CustomNumericMaskPropertyEditor" />
+        <Member Name="Telephone" PropertyEditorType="MaskedInputDemo.Module.Blazor.Editors.CustomTextMaskPropertyEditor" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="21.1.3.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

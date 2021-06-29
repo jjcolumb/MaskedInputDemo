@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@using System.Globalization
+<DevExpress.Blazor.DxMaskedInput Value=@ComponentModel.Value
+                                 Mask="C"
+                                 @onchange=@(e => ComponentModel.SetValueFromUI((decimal)e.Value))
+                                 ReadOnly=@ComponentModel.ReadOnly
+                                 @attributes=@ComponentModel.Attributes>
+    <DevExpress.Blazor.DxNumericMaskProperties Culture="@CultureInfo.GetCultureInfo("en-US")" />
+</DevExpress.Blazor.DxMaskedInput>
+@code {
+    [Parameter]
+    public NumericMaskModel ComponentModel { get; set; }
+    public string PlaceHolder = "*";
+    public static RenderFragment Create(NumericMaskModel componentModel) =>
+    @<NumericMaskRenderer ComponentModel=@componentModel />;
+}

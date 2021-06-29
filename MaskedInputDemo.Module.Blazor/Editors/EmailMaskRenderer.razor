@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+<DevExpress.Blazor.DxMaskedInput Value=@ComponentModel.Value
+                                 MaskMode="DevExpress.Blazor.MaskMode.RegEx"
+                                 Mask=@("(\\w|[.-])+@(\\w|-)+\\.(\\w|-){2,4}")
+                                 @onchange=@(e => ComponentModel.SetValueFromUI((string)e.Value))
+                                 ReadOnly=@ComponentModel.ReadOnly
+                                 @attributes=@ComponentModel.Attributes>
+    <DevExpress.Blazor.DxRegExMaskProperties PlaceholdersVisible=false />
+</DevExpress.Blazor.DxMaskedInput>
+@code {
+    [Parameter]
+    public TextMaskModel ComponentModel { get; set; }
+    public string PlaceHolder = "*";
+    public static RenderFragment Create(TextMaskModel componentModel) =>
+    @<EmailMaskRenderer ComponentModel=@componentModel />;
+}
