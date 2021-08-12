@@ -2,7 +2,7 @@
 <DevExpress.Blazor.DxMaskedInput  
                                  Value=@ComponentModel.Value 
                                  Mask="(999)000-0000" 
-                                 @onchange=@(e => ComponentModel.SetValueFromUI((string)e.Value))
+                                 ValueChanged=@((string value) => ComponentModel.SetValueFromUI(value))
                                  ReadOnly=@ComponentModel.ReadOnly
                                  @attributes=@ComponentModel.Attributes>
     <DevExpress.Blazor.DxTextMaskProperties Placeholder="@('*')" SaveLiteral=false />
