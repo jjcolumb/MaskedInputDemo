@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components.Web
 <DevExpress.Blazor.DxMaskedInput Value=@ComponentModel.Value
                                  Mask="d"
-                                 @onchange=@(e => ComponentModel.SetValueFromUI((string)e.Value))
+                                 ValueChanged=@((string value) => ComponentModel.SetValueFromUI(value))
                                  ReadOnly=@ComponentModel.ReadOnly
                                  @attributes=@ComponentModel.Attributes
                                  MaskMode="DevExpress.Blazor.MaskMode.DateTime">
